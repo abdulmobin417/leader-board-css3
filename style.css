@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Lobster&family=Montserrat:wght@800&family=Poppins:wght@500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
 
 * {
   margin: 0;
@@ -11,8 +10,13 @@ body {
   background-color: #f3f1ff;
 }
 
-header {
+/* -------------------------------------
+        Nav Bar Section Start 
+---------------------------------------*/
+
+/* header {
   background-color: #562eff;
+  margin-bottom: 35px;
 }
 
 nav {
@@ -42,7 +46,7 @@ nav {
 .right-side {
   display: flex;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
   height: 100px;
 }
 
@@ -57,9 +61,32 @@ nav {
 .right-side img {
   width: 70px;
   height: 70px;
-}
+} */
+
+/* -----------------------------
+      Nav Bar Section End
+-------------------------------- */
 
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: #ffffff;
+  width: 870px;
+  padding: 30px;
+  border-radius: 5px;
+  margin-bottom: 21px;
+}
+
+/* --------------------------------------------------------
+      Another version of 'main' and 'container' css
+---------------------------------------------------------- */
+
+/* main {
   width: 900px;
   max-width: 90%;
   margin: 0 auto;
@@ -71,7 +98,7 @@ main {
   border-radius: 5px;
   margin-bottom: 20px;
   margin-right: 0;
-}
+} */
 
 .section-title {
   color: #562eff;
@@ -79,6 +106,10 @@ main {
   margin-bottom: 30px;
   margin-top: 3px;
 }
+
+/* --------------------------
+      Playres Style
+----------------------------- */
 
 .top-players {
   margin-bottom: 30px;
@@ -110,6 +141,10 @@ hr {
   border-top: 1px solid #d1d1d1;
   margin-bottom: 27px;
 }
+
+/* ----------------------
+        Blogs Style
+------------------------- */
 
 .blogs {
   display: grid;
@@ -151,7 +186,70 @@ hr {
   font-size: 16px;
 }
 
+/* -----------------------
+        Courses Style
+-------------------------- */
+
 .courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 24px;
+}
+
+.course {
+  width: 245px;
+  height: 270px;
+  border-radius: 5px;
+  box-shadow: 4px 4px #ece7e733;
+}
+
+.course .course-banner img {
+  width: 225px;
+  height: 104px;
+}
+
+.course-detail .course-title {
+  font-size: 17px;
+  width: 90%;
+}
+
+.course-detail .course-author {
+  font-weight: 400;
+  font-size: 14.69px;
+  color: orangered;
+}
+
+.course-info {
+  display: flex;
+  align-items: center;
+}
+
+.fa-star {
+  font-size: 12px;
+}
+
+.fa-star.filled {
+  color: #ffc014;
+}
+
+.fa-star.empty {
+  color: #aeaeae;
+  margin-right: 10px;
+}
+
+.duration {
+  background-color: rgb(255, 228, 232);
+  color: rgb(246, 70, 94);
+  padding: 2px 8px;
+  border-radius: 15px;
+  font-size: 14px;
+  margin-left: 35px;
+}
+/* --------------------------------------------
+        Another Version of Courses Style 
+----------------------------------------------- */
+
+/* .courses {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
@@ -213,22 +311,44 @@ hr {
 
 .duration i {
   padding-right: 5px;
+} */
+
+/* ---------------------------
+        Responsive
+------------------------------ */
+
+/* Mobile Device */
+@media only screen and (max-width: 668px) {
+  .container{
+    width: 100%;
+  }
+  .players, .blogs, .courses{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .player, .blog{
+    flex-direction: column;
+  }
+  .courses{
+    justify-items: center;
+  }
 }
 
-@media (max-width: 992px) {
-  .players,
-  .courses {
+/* Ipad Device */
+@media only screen and (min-width: 668px) and (max-width: 992px) {
+  .container{
+    width: 100%;
+  }
+  .players, .courses{
     grid-template-columns: repeat(2, 1fr);
   }
   .blogs {
     grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
   }
-}
-@media (max-width: 668px) {
-  .players, .courses {
-    grid-template-columns: repeat(1, 1fr);
+  .player{
+    flex-direction: column;
   }
-  .blog {
-    display: block;
+  .courses{
+    margin-left: 10%;
   }
 }
