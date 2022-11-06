@@ -14,7 +14,7 @@ body {
         Nav Bar Section Start 
 ---------------------------------------*/
 
-/* header {
+header {
   background-color: #562eff;
   margin-bottom: 35px;
 }
@@ -61,7 +61,7 @@ nav {
 .right-side img {
   width: 70px;
   height: 70px;
-} */
+}
 
 /* -----------------------------
       Nav Bar Section End
